@@ -256,9 +256,14 @@
         "end_date": ""
       }
     },
-    "custom_tracksuits_banner_Nefgyb": {
-      "type": "custom-tracksuits-banner",
-      "name": "Custom Tracksuits Banner",
+    "split_hero_banner_dMJB3B": {
+      "type": "split-hero-banner",
+      "name": "Split Hero Banner",
+      "settings": {}
+    },
+    "custom_reviews_carousel_ExB8Qp": {
+      "type": "custom-reviews-carousel",
+      "name": "Custom Reviews Carousel",
       "settings": {}
     },
     "custom_auto_video_L6MHLA": {
@@ -445,18 +450,13 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
-    },
-    "custom_reviews_carousel_ExB8Qp": {
-      "type": "custom-reviews-carousel",
-      "name": "Custom Reviews Carousel",
-      "settings": {}
     }
   },
   "order": [
     "hero_jVaWmY",
     "product_list_fa6P9H",
     "sale_countdown_timer_AQxndb",
-    "custom_tracksuits_banner_Nefgyb",
+    "split_hero_banner_dMJB3B",
     "custom_reviews_carousel_ExB8Qp",
     "custom_auto_video_L6MHLA",
     "product_list_qHBqVr"
