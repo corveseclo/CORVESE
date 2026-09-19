@@ -1,0 +1,109 @@
+<div class="split-hero-wrapper">
+  <!-- LEFT COLUMN: HOODIES -->
+  <a href="/collections/hoodies" class="split-hero-card">
+    <img 
+      src="ADD_HOODIES_IMAGE_URL_HERE" 
+      alt="Hoodies" 
+      width="1000"
+      height="1300"
+      class="split-hero-img"
+      loading="lazy"
+    >
+    <div class="split-hero-badge">HOODIES</div>
+  </a>
+
+  <!-- RIGHT COLUMN: SWEATPANTS -->
+  <a href="/collections/sweatpants" class="split-hero-card">
+    <img 
+      src="ADD_SWEATPANTS_IMAGE_URL_HERE" 
+      alt="Sweatpants" 
+      width="1000"
+      height="1300"
+      class="split-hero-img"
+      loading="lazy"
+    >
+    <div class="split-hero-badge">SWEATPANTS</div>
+  </a>
+</div>
+
+{% stylesheet %}
+.split-hero-wrapper {
+  width: 100%;
+  background-color: #000000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px; /* Center gap distance matching your other sections */
+  padding: 0 6px; /* Slightly reduced edge gaps so images are wider */
+  box-sizing: border-box;
+}
+
+.split-hero-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5.2; /* Taller height ratio than standard 4:5 */
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  background-color: #111111;
+}
+
+.split-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.split-hero-card:hover .split-hero-img {
+  transform: scale(1.02);
+}
+
+/* Light grey rectangle badge in bottom-left corner */
+.split-hero-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+  background-color: #e0e0e0; /* Greyish rectangle */
+  color: #000000;
+  font-size: 0.85rem;
+  font-weight: 800; /* Bolder text style */
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-family: inherit;
+  line-height: 1;
+}
+
+@media screen and (max-width: 749px) {
+  .split-hero-wrapper {
+    grid-template-columns: 1fr; /* Stack vertically on mobile */
+    gap: 8px;
+    padding: 0 4px;
+  }
+  .split-hero-card {
+    aspect-ratio: 4 / 5;
+  }
+  .split-hero-badge {
+    bottom: 12px;
+    left: 12px;
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Split Hero Banner",
+  "tag": "section",
+  "class": "section",
+  "presets": [
+    {
+      "name": "Split Hero Banner"
+    }
+  ]
+}
+{% endschema %}
