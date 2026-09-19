@@ -1,1 +1,273 @@
+<div class="reviews-section-wrapper">
+  <div class="reviews-carousel" id="ReviewsCarousel-{{ section.id }}">
+    
+    <!-- REVIEW ITEM 1 -->
+    <div class="review-slide active">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-quote-text">
+        <span class="quote-mark">“</span>Needed something new for everyday. Proper everyday tracksuit. Thinking about another colour already. Bang on.🔥<span class="quote-mark">”</span>
+      </div>
+      <div class="review-image-container">
+        <img src="YOUR_IMAGE_URL_HERE_1" alt="Review photo" width="400" height="600" class="review-image" loading="lazy">
+      </div>
+      <div class="review-author">Lucas</div>
+    </div>
 
+    <!-- REVIEW ITEM 2 -->
+    <div class="review-slide">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-quote-text">
+        <span class="quote-mark">“</span>Quality is elite. Best fitting hoodie I own by far. Definitely ordering again.<span class="quote-mark">”</span>
+      </div>
+      <div class="review-image-container">
+        <img src="YOUR_IMAGE_URL_HERE_2" alt="Review photo" width="400" height="600" class="review-image" loading="lazy">
+      </div>
+      <div class="review-author">Alex</div>
+    </div>
+
+    <!-- REVIEW ITEM 3 -->
+    <div class="review-slide">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-quote-text">
+        <span class="quote-mark">“</span>Fits perfectly, material feels heavy and durable. Unbelievable quality.<span class="quote-mark">”</span>
+      </div>
+      <div class="review-image-container">
+        <img src="YOUR_IMAGE_URL_HERE_3" alt="Review photo" width="400" height="600" class="review-image" loading="lazy">
+      </div>
+      <div class="review-author">Jordan</div>
+    </div>
+
+    <!-- REVIEW ITEM 4 -->
+    <div class="review-slide">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-quote-text">
+        <span class="quote-mark">“</span>Delivery was fast and the tracksuit fits exactly as expected. Top tier branding.<span class="quote-mark">”</span>
+      </div>
+      <div class="review-image-container">
+        <img src="YOUR_IMAGE_URL_HERE_4" alt="Review photo" width="400" height="600" class="review-image" loading="lazy">
+      </div>
+      <div class="review-author">Sam</div>
+    </div>
+
+    <!-- REVIEW ITEM 5 -->
+    <div class="review-slide">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-quote-text">
+        <span class="quote-mark">“</span>Super comfortable, the fit is clean and the details are insane.<span class="quote-mark">”</span>
+      </div>
+      <div class="review-image-container">
+        <img src="YOUR_IMAGE_URL_HERE_5" alt="Review photo" width="400" height="600" class="review-image" loading="lazy">
+      </div>
+      <div class="review-author">Marcus</div>
+    </div>
+
+    <!-- REVIEW ITEM 6 -->
+    <div class="review-slide">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-quote-text">
+        <span class="quote-mark">“</span>Best purchase this season. Getting compliments every time I wear it.<span class="quote-mark">”</span>
+      </div>
+      <div class="review-image-container">
+        <img src="YOUR_IMAGE_URL_HERE_6" alt="Review photo" width="400" height="600" class="review-image" loading="lazy">
+      </div>
+      <div class="review-author">Liam</div>
+    </div>
+
+  </div>
+
+  <!-- NAVIGATION CONTROLS -->
+  <div class="reviews-navigation">
+    <button type="button" class="nav-arrow prev-btn" id="prevBtn-{{ section.id }}" aria-label="Previous review">&#8249;</button>
+    <div class="dots-container" id="dotsContainer-{{ section.id }}">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+      <span class="dot" data-index="4"></span>
+      <span class="dot" data-index="5"></span>
+    </div>
+    <button type="button" class="nav-arrow next-btn" id="nextBtn-{{ section.id }}" aria-label="Next review">&#8250;</button>
+  </div>
+</div>
+
+{% stylesheet %}
+.reviews-section-wrapper {
+  width: 100%;
+  background-color: #000000;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.reviews-carousel {
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  min-height: 520px;
+}
+
+.review-slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.review-slide.active {
+  display: flex;
+}
+
+.review-stars {
+  color: #d4af37; /* Gold stars */
+  font-size: 1.4rem;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.review-quote-text {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 25px;
+  max-width: 600px;
+  font-family: inherit;
+}
+
+.quote-mark {
+  color: #555555; /* Double marked grey quote */
+  font-size: 1.8rem;
+  font-weight: 900;
+  padding: 0 4px;
+}
+
+.review-image-container {
+  width: 280px;
+  aspect-ratio: 2 / 3; /* Matches portrait orientation of reference image */
+  background-color: #111111;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.review-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.review-author {
+  color: #888888;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+/* NAVIGATION & DOTS */
+.reviews-navigation {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.nav-arrow {
+  background: transparent;
+  border: 1px solid #333333;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.nav-arrow:hover {
+  border-color: #ffffff;
+}
+
+.dots-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: #444444; /* Grey inactive circles */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dot.active {
+  background-color: #ffffff; /* White active circle */
+}
+
+@media screen and (max-width: 749px) {
+  .review-quote-text {
+    font-size: 1.2rem;
+  }
+  .review-image-container {
+    width: 220px;
+  }
+}
+{% endstylesheet %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sectionId = "{{ section.id }}";
+    const carousel = document.getElementById('ReviewsCarousel-' + sectionId);
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.review-slide');
+    const dots = document.querySelectorAll('#dotsContainer-' + sectionId + ' .dot');
+    const prevBtn = document.getElementById('prevBtn-' + sectionId);
+    const nextBtn = document.getElementById('nextBtn-' + sectionId);
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      currentIndex = index;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentIndex);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', function() {
+        const index = parseInt(this.getAttribute('data-index'));
+        showSlide(index);
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Custom Reviews Carousel",
+  "tag": "section",
+  "class": "section",
+  "presets": [
+    {
+      "name": "Custom Reviews Carousel"
+    }
+  ]
+}
+{% endschema %}
