@@ -1,0 +1,77 @@
+<div class="custom-video-wrapper">
+  <div class="custom-video-container">
+    <video 
+      class="custom-video-element"
+      autoplay 
+      loop 
+      muted 
+      playsinline
+      preload="auto"
+    >
+      <source src="https://cdn.shopify.com/videos/c/o/v/5b02e005496a4018ad4d35579f52bad1.mp4" type="video/mp4">
+    </video>
+    
+    <div class="custom-video-overlay"></div>
+  </div>
+</div>
+
+{% stylesheet %}
+.custom-video-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 20px; /* Increased top spacing by ~60% */
+  background-color: #000000;
+  box-sizing: border-box;
+}
+
+.custom-video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.custom-video-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #00000033;
+  z-index: 1;
+}
+
+@media screen and (max-width: 749px) {
+  .custom-video-wrapper {
+    margin-top: 14px;
+  }
+  .custom-video-container {
+    aspect-ratio: 9 / 16;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Custom Auto Video",
+  "tag": "section",
+  "class": "section",
+  "presets": [
+    {
+      "name": "Custom Auto Video"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,191 @@
+<div class="sale-timer-section">
+  <h2 class="sale-timer-heading">{{ section.settings.heading }}</h2>
+
+  <div class="sale-timer-container">
+    <div class="timer-unit-group">
+      <div class="timer-box" id="timerDays-{{ section.id }}">00</div>
+      <span class="timer-label">DAYS</span>
+    </div>
+
+    <div class="timer-unit-group">
+      <div class="timer-box" id="timerHours-{{ section.id }}">00</div>
+      <span class="timer-label">HOURS</span>
+    </div>
+
+    <div class="timer-unit-group">
+      <div class="timer-box" id="timerMinutes-{{ section.id }}">00</div>
+      <span class="timer-label">MINUTES</span>
+    </div>
+
+    <div class="timer-unit-group">
+      <div class="timer-box" id="timerSeconds-{{ section.id }}">00</div>
+      <span class="timer-label">SECONDS</span>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+.sale-timer-section {
+  width: 100%;
+  background-color: #000000;
+  padding: 40px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.sale-timer-heading {
+  color: #ffffff;
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0 0 25px 0;
+  text-align: center;
+  font-family: inherit;
+}
+
+.sale-timer-container {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-unit-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.timer-box {
+  background-color: #ff3b30;
+  color: #ffffff;
+  font-size: 3.5rem;
+  font-weight: 800;
+  width: 90px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  font-family: inherit;
+}
+
+.timer-label {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 749px) {
+  .sale-timer-heading {
+    font-size: 2rem;
+  }
+  .sale-timer-container {
+    gap: 8px;
+  }
+  .timer-box {
+    width: 65px;
+    height: 90px;
+    font-size: 2.2rem;
+  }
+  .timer-label {
+    font-size: 0.7rem;
+  }
+}
+{% endstylesheet %}
+
+<script>
+  (function() {
+    function initTimer() {
+      const customDateStr = "{{ section.settings.end_date }}".trim();
+      let targetDate;
+
+      if (customDateStr) {
+        targetDate = new Date(customDateStr).getTime();
+      } else {
+        // Default target: End of next week (Sunday 23:59:59)
+        const now = new Date();
+        const daysUntilNextSunday = 14 - (now.getDay() === 0 ? 7 : now.getDay());
+        targetDate = new Date(
+          now.getFullYear(), 
+          now.getMonth(), 
+          now.getDate() + daysUntilNextSunday, 
+          23, 59, 59
+        ).getTime();
+      }
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
+
+        const daysEl = document.getElementById('timerDays-{{ section.id }}');
+        const hoursEl = document.getElementById('timerHours-{{ section.id }}');
+        const minsEl = document.getElementById('timerMinutes-{{ section.id }}');
+        const secsEl = document.getElementById('timerSeconds-{{ section.id }}');
+
+        if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+        if (difference <= 0) {
+          daysEl.textContent = '00';
+          hoursEl.textContent = '00';
+          minsEl.textContent = '00';
+          secsEl.textContent = '00';
+          return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        daysEl.textContent = String(days).padStart(2, '0');
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minsEl.textContent = String(minutes).padStart(2, '0');
+        secsEl.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTimer);
+    } else {
+      initTimer();
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Sale Countdown Timer",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "50% SALE ENDS SOON"
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "End Date (Format: YYYY-MM-DD HH:MM:SS)",
+      "info": "Example: 2026-09-27 23:59:59. Leave blank for end of next week."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sale Countdown Timer"
+    }
+  ]
+}
+{% endschema %}

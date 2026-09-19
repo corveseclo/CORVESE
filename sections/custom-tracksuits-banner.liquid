@@ -1,0 +1,151 @@
+<div class="custom-grid-wrapper">
+  <!-- LEFT COLUMN: HOODIES & FALL/WINTER 26' -->
+  <div class="custom-grid-col custom-grid-left">
+    <a href="/collections/hoodies" class="custom-card custom-card-hoodies">
+      <img 
+        src="https://cdn.shopify.com/s/files/1/1082/5262/7281/files/hf_20260820_142511_97193204-a9fa-4184-b1e2-030c32b72df7.webp?v=1789742559" 
+        alt="Hoodies" 
+        width="1000"
+        height="500"
+        class="custom-card-img"
+        loading="lazy"
+      >
+      <div class="custom-card-overlay"></div>
+      <div class="custom-card-title">HOODIES</div>
+    </a>
+
+    <a href="/collections/fall-winter" class="custom-card custom-card-fw">
+      <img 
+        src="https://cdn.shopify.com/s/files/1/1082/5262/7281/files/hf_20260820_140343_cc84bd82-e7ce-42ef-9e4e-92ecc48a8d52.webp?v=1789745428" 
+        alt="FALL/WINTER 26'" 
+        width="1000"
+        height="600"
+        class="custom-card-img"
+        loading="lazy"
+      >
+      <div class="custom-card-overlay"></div>
+      <div class="custom-card-title">FALL/WINTER 26'</div>
+    </a>
+  </div>
+
+  <!-- RIGHT COLUMN: TRACKSUITS -->
+  <div class="custom-grid-col custom-grid-right">
+    <a href="/collections/tracksuits" class="custom-card custom-card-tracksuits">
+      <img 
+        src="https://cdn.shopify.com/s/files/1/1082/5262/7281/files/hf_20260820_122759_4ba85002-981f-4c75-b5c1-676c80fded76.webp?v=1789742510" 
+        alt="Tracksuits" 
+        width="800"
+        height="1000"
+        class="custom-card-img"
+        loading="lazy"
+      >
+      <div class="custom-card-overlay"></div>
+      <div class="custom-card-title">TRACKSUITS</div>
+    </a>
+  </div>
+</div>
+
+{% stylesheet %}
+.custom-grid-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px; /* Consistent black gap in the center and between rows */
+  box-sizing: border-box;
+}
+
+.custom-grid-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.custom-grid-left {
+  gap: 12px; /* Same black gap distance between Hoodies and Fall/Winter */
+}
+
+.custom-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #000000;
+}
+
+/* Reduced height rectangular Hoodies card */
+.custom-card-hoodies {
+  height: 38%;
+  flex-shrink: 0;
+}
+
+/* Fall/Winter stretches to fill the remaining height so the bottom lines up perfectly */
+.custom-card-fw {
+  flex: 1;
+  min-height: 0;
+}
+
+/* Tracksuits card fills full height of right column */
+.custom-card-tracksuits {
+  height: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.custom-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.custom-card-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #00000040;
+  z-index: 1;
+}
+
+/* Bolder text with zero letter spacing */
+.custom-card-title {
+  position: absolute;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 2.3rem;
+  font-weight: 900;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media screen and (max-width: 749px) {
+  .custom-grid-wrapper {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .custom-grid-left {
+    gap: 8px;
+  }
+  .custom-card-hoodies {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .custom-card-title {
+    font-size: 1.5rem;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Custom Tracksuits Banner",
+  "tag": "section",
+  "class": "section",
+  "presets": [
+    {
+      "name": "Custom Tracksuits Banner"
+    }
+  ]
+}
+{% endschema %}
