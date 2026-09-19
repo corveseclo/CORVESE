@@ -1,8 +1,8 @@
 <div class="split-hero-wrapper">
   <!-- LEFT COLUMN: HOODIES -->
-  <a href="/collections/hoodies" class="split-hero-card">
+  <a href="/pages/hoodies" class="split-hero-card">
     <img 
-      src="https://cdn.shopify.com/s/files/1/1082/5262/7281/files/IMG-1206.png?v=1789860137"
+      src="ADD_HOODIES_IMAGE_URL_HERE" 
       alt="Hoodies" 
       width="1000"
       height="1300"
@@ -13,9 +13,9 @@
   </a>
 
   <!-- RIGHT COLUMN: SWEATPANTS -->
-  <a href="/collections/sweatpants" class="split-hero-card">
+  <a href="/pages/sweatpants" class="split-hero-card">
     <img 
-      src="https://cdn.shopify.com/s/files/1/1082/5262/7281/files/IMG-1205.jpg?v=1789860136"
+      src="ADD_SWEATPANTS_IMAGE_URL_HERE" 
       alt="Sweatpants" 
       width="1000"
       height="1300"
@@ -32,15 +32,15 @@
   background-color: #000000;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px; /* Center gap distance matching your other sections */
-  padding: 0 6px; /* Slightly reduced edge gaps so images are wider */
+  gap: 12px;
+  padding: 0 6px;
   box-sizing: border-box;
 }
 
 .split-hero-card {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5.2; /* Taller height ratio than standard 4:5 */
+  aspect-ratio: 4 / 5.2;
   overflow: hidden;
   display: block;
   text-decoration: none;
@@ -59,16 +59,15 @@
   transform: scale(1.02);
 }
 
-/* Light grey rectangle badge in bottom-left corner */
 .split-hero-badge {
   position: absolute;
   bottom: 16px;
   left: 16px;
   z-index: 2;
-  background-color: #e0e0e0; /* Greyish rectangle */
+  background-color: #e0e0e0;
   color: #000000;
   font-size: 0.85rem;
-  font-weight: 800; /* Bolder text style */
+  font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   padding: 6px 12px;
@@ -79,7 +78,7 @@
 
 @media screen and (max-width: 749px) {
   .split-hero-wrapper {
-    grid-template-columns: 1fr; /* Stack vertically on mobile */
+    grid-template-columns: 1fr;
     gap: 8px;
     padding: 0 4px;
   }
