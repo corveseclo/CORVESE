@@ -1,0 +1,108 @@
+<div class="split-hero-wrapper">
+  <!-- LEFT COLUMN: T-SHIRTS -->
+  <a href="/pages/t-shirts" class="split-hero-card">
+    <img 
+      src="https://cdn.shopify.com/s/files/1/1082/5262/7281/files/10B22A6B-35F1-436E-B46C-E158F78A0E66.png?v=1789861830"
+      alt="T-shirts" 
+      width="1000"
+      height="1300"
+      class="split-hero-img"
+      loading="lazy"
+    >
+    <div class="split-hero-badge">HOODIES</div>
+  </a>
+
+  <!-- RIGHT COLUMN: HEADWEAR -->
+  <a href="/pages/headwear" class="split-hero-card">
+    <img 
+      src="https://cdn.shopify.com/s/files/1/1082/5262/7281/files/96B98C5A-5C2C-4F8E-8938-B663C0D22E38.jpg?v=1789861829"
+      alt="Headwear" 
+      width="1000"
+      height="1300"
+      class="split-hero-img"
+      loading="lazy"
+    >
+    <div class="split-hero-badge">HEADWEAR</div>
+  </a>
+</div>
+
+{% stylesheet %}
+.split-hero-wrapper {
+  width: 100%;
+  background-color: #000000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 0 6px;
+  box-sizing: border-box;
+}
+
+.split-hero-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5.2;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  background-color: #111111;
+}
+
+.split-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.split-hero-card:hover .split-hero-img {
+  transform: scale(1.02);
+}
+
+.split-hero-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+  background-color: #e0e0e0;
+  color: #000000;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-family: inherit;
+  line-height: 1;
+}
+
+@media screen and (max-width: 749px) {
+  .split-hero-wrapper {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 0 4px;
+  }
+  .split-hero-card {
+    aspect-ratio: 4 / 5;
+  }
+  .split-hero-badge {
+    bottom: 12px;
+    left: 12px;
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Split Hero Banner",
+  "tag": "section",
+  "class": "section",
+  "presets": [
+    {
+      "name": "Split Hero Banner"
+    }
+  ]
+}
+{% endschema %}
