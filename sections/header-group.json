@@ -19,8 +19,8 @@
         "background_color": "#f02626",
         "divider_width": 1,
         "divider_color": "#000000",
-        "padding-block-start": 10,
-        "padding-block-end": 10
+        "padding-block-start": 9,
+        "padding-block-end": 9
       }
     },
     "header_section": {
