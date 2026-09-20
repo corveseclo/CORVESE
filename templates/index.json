@@ -450,6 +450,11 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "split_hero_banner2_3BMpRd": {
+      "type": "split-hero-banner2",
+      "name": "Split Hero Banner",
+      "settings": {}
     }
   },
   "order": [
@@ -459,6 +464,7 @@
     "split_hero_banner_dMJB3B",
     "custom_reviews_carousel_ExB8Qp",
     "custom_auto_video_L6MHLA",
-    "product_list_qHBqVr"
+    "product_list_qHBqVr",
+    "split_hero_banner2_3BMpRd"
   ]
 }
