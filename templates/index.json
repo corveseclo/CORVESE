@@ -455,6 +455,11 @@
       "type": "split-hero-banner2",
       "name": "Split Hero Banner",
       "settings": {}
+    },
+    "single_hero_banner_NjVDne": {
+      "type": "single-hero-banner",
+      "name": "Single Hero Banner",
+      "settings": {}
     }
   },
   "order": [
@@ -462,6 +467,7 @@
     "product_list_fa6P9H",
     "sale_countdown_timer_AQxndb",
     "split_hero_banner_dMJB3B",
+    "single_hero_banner_NjVDne",
     "custom_reviews_carousel_ExB8Qp",
     "custom_auto_video_L6MHLA",
     "product_list_qHBqVr",
