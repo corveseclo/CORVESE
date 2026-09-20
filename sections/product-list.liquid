@@ -1,4 +1,72 @@
+<style>
+  /* 1. Force exact 3-column width & gap calculations */
+  .section-resource-list .resource-list,
+  .section-resource-list [data-testid="resource-list-grid"] {
+    gap: 12px !important;
+  }
 
+  .section-resource-list .resource-list__item {
+    flex: 0 0 calc((100% - 24px) / 3) !important;
+    width: calc((100% - 24px) / 3) !important;
+    max-width: calc((100% - 24px) / 3) !important;
+  }
+
+  /* 2. Taller image container proportions matching Cole Buxton */
+  .section-resource-list [data-type="product-card-gallery"],
+  .section-resource-list .product-card__media,
+  .section-resource-list .media {
+    aspect-ratio: 4 / 4.8 !important;
+    background-color: #ffffff !important;
+  }
+
+  .section-resource-list img {
+    object-fit: contain !important;
+  }
+
+  /* 3. Dark grey metadata box styling */
+  .section-resource-list [data-type="_product-card"],
+  .section-resource-list .product-card__content {
+    background-color: #2b2b2b !important;
+    padding: 16px 10px !important;
+    text-align: center !important;
+  }
+
+  /* Text & price overrides */
+  .section-resource-list [data-type="product-title"] *,
+  .section-resource-list .product-card__title {
+    color: #ffffff !important;
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+  }
+
+  .section-resource-list [data-type="price"] * {
+    color: #ff3b30 !important;
+    font-weight: 700 !important;
+  }
+
+  /* 4. Black circular navigation arrows with white icons */
+  .section-resource-list button[class*="nav"],
+  .section-resource-list button[class*="arrow"],
+  .section-resource-list .slider-button,
+  .section-resource-list [data-component="carousel-button"] {
+    background-color: #000000 !important;
+    border: 1px solid #333333 !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    opacity: 1 !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-resource-list .resource-list__item {
+      flex: 0 0 100% !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+</style>
 
 {% liquid
   assign max_items = section.settings.max_products
