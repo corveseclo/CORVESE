@@ -261,6 +261,11 @@
       "name": "Split Hero Banner",
       "settings": {}
     },
+    "single_hero_banner_NjVDne": {
+      "type": "single-hero-banner",
+      "name": "Single Hero Banner",
+      "settings": {}
+    },
     "custom_reviews_carousel_ExB8Qp": {
       "type": "custom-reviews-carousel",
       "name": "Custom Reviews Carousel",
@@ -454,11 +459,6 @@
     "split_hero_banner2_3BMpRd": {
       "type": "split-hero-banner2",
       "name": "Split Hero Banner",
-      "settings": {}
-    },
-    "single_hero_banner_NjVDne": {
-      "type": "single-hero-banner",
-      "name": "Single Hero Banner",
       "settings": {}
     }
   },
