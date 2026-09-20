@@ -10,7 +10,7 @@
 {
   "current": {
     "logo": "shopify://shop_images/IMG_1203.png",
-    "logo_height": 55,
+    "logo_height": 50,
     "logo_height_mobile": 45,
     "favicon": "shopify://shop_images/4D4E4792-E3B8-4D19-8CA6-1711D0E6F4CE.png",
     "page_text_color": "{{ settings.color_palette.foreground }}",
@@ -107,13 +107,6 @@
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
     "content_for_index": [],
-    "blocks": {
-      "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": true,
-        "settings": {}
-      }
-    },
     "color_palette": {
       "background": "#ffffff",
       "foreground": "#000000",
