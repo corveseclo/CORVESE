@@ -25,7 +25,7 @@
             "custom_button_border": "{{ settings.color_palette.background }}",
             "link_text_color": "",
             "width": "fit-content",
-            "custom_width": 100,
+            "custom_width": 0,
             "width_mobile": "fit-content",
             "custom_width_mobile": 100
           },
