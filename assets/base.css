@@ -1836,57 +1836,42 @@ main > .shopify-section:first-child .section:not(.disable-section-top-offset) {
     margin-top: calc(var(--header-height) * var(--transparent-header-offset-boolean) * -1);
   }
 }
-/* HORIZON THEME: Force 3-column carousel layout & full card sizing */
-.slider-component,
-.grid-component,
-ul[id*="Slider-"],
-.product-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+/* HORIZON CAROUSEL: Exact width, height & gap matching reference */
+.featured-collection .slider,
+.featured-collection .grid {
   gap: 12px !important;
-  width: 100% !important;
 }
 
-/* Ensure individual product items fill the entire column width */
-.slider-component .grid__item,
-.product-grid .grid__item,
-li.grid__item {
-  width: 100% !important;
-  max-width: 100% !important;
-  flex: 0 0 100% !important;
+/* Force 3 cards to take full available width */
+.featured-collection .grid__item {
+  width: calc((100% - 24px) / 3) !important;
+  max-width: calc((100% - 24px) / 3) !important;
+  flex: 0 0 calc((100% - 24px) / 3) !important;
 }
 
-/* Taller product image container matching reference */
-.card-wrapper .media,
-.card-information,
-.card__media {
+/* Image container height ratio */
+.featured-collection .card__media {
   aspect-ratio: 4 / 4.8 !important;
   background-color: #ffffff !important;
 }
 
-.card__media img,
-.media img {
+.featured-collection .card__media img {
   object-fit: contain !important;
 }
 
-/* Dark grey bottom info section */
-.card__content,
-.card-information {
+/* Dark grey metadata box */
+.featured-collection .card__content {
   background-color: #2b2b2b !important;
-  padding: 14px 10px !important;
+  padding: 16px 10px !important;
   text-align: center !important;
 }
 
-/* Typography styles for Title & Price */
-.card__heading,
-.card-information .caption-with-letter-spacing {
+/* Arrows styling */
+.featured-collection .slider-button {
+  background-color: #000000 !important;
+  border: 1px solid #333333 !important;
   color: #ffffff !important;
-  font-size: 0.85rem !important;
-  font-weight: 800 !important;
-  text-transform: uppercase !important;
-}
-
-.price .price-item--sale {
-  color: #ff3b30 !important;
-  font-weight: 700 !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
 }
