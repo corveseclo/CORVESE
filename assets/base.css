@@ -1883,3 +1883,13 @@ variant-radios input[type="radio"]:focus + label,
   box-shadow: none !important;
   border-color: #ffffff !important;
 }
+
+/* CHANGE DRAWER MENU RIGHT BORDER TO BLACK */
+.menu-drawer,
+.drawer,
+.menu-drawer__inner-container,
+#menu-drawer {
+  border-right: 1px solid #000000 !important;
+  box-shadow: none !important;
+}
+
