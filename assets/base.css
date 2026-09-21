@@ -1894,31 +1894,35 @@ variant-radios input[type="radio"]:focus + label,
 }
 
 /* ============================================================
-   COLESICE DARK MODE CART DRAWER & MINIMAL X BUTTON
+   COLESICE HORIZON CART DRAWER - FULL DARK THEME
    ============================================================ */
 
-/* 1. FORCE DRAWER BACKGROUND TO BLACK & TEXT TO WHITE */
+/* 1. FORCE DRAWER CONTAINER & INNER PANEL TO PURE BLACK */
+cart-drawer-component,
 .cart-drawer,
+.cart-drawer__inner,
 .drawer__inner,
-#CartDrawer,
-.cart-drawer__inner {
+#CartDrawer {
   background-color: #000000 !important;
   color: #ffffff !important;
 }
 
-/* Force headings and body text inside cart to white */
+/* 2. FORCE ALL TEXT, HEADINGS & EMPTY MESSAGES TO WHITE */
+cart-drawer-component *,
 .cart-drawer *,
-.drawer__inner *,
+.cart-drawer__inner *,
 .cart-drawer__empty-content,
-.cart-drawer .cart-item__name,
-.cart-drawer .price {
+.cart-drawer__heading,
+.cart-drawer__title {
   color: #ffffff !important;
 }
 
-/* 2. CONTINUE SHOPPING BUTTON (WHITE BOX / BLACK TEXT) */
+/* 3. CONTINUE SHOPPING / CHECKOUT BUTTON (WHITE BOX WITH BLACK TEXT) */
 .cart-drawer .button,
-.cart-drawer .button--primary,
-.cart-drawer__empty-content .button {
+.cart-drawer button,
+.cart-drawer a.button,
+.cart-drawer__empty-content .button,
+.cart-drawer__summary .button {
   background-color: #ffffff !important;
   color: #000000 !important;
   border: 1px solid #ffffff !important;
@@ -1935,31 +1939,29 @@ variant-radios input[type="radio"]:focus + label,
   color: #000000 !important;
 }
 
-/* 3. MATCHING MINIMAL CLOSE 'X' BUTTON (NO CIRCLE) */
+/* 4. CLEAN 'X' CLOSE BUTTON (NO CIRCLE OVERLAY) */
 .cart-drawer .drawer__close,
 .cart-drawer button.drawer__close,
-.cart-drawer .close-button {
+.cart-drawer-component .drawer__close,
+.cart-drawer-component button[aria-label*="Close"] {
   background: transparent !important;
   border: none !important;
   border-radius: 0px !important;
   box-shadow: none !important;
   color: #ffffff !important;
-  top: 15px !important;
-  left: 15px !important;
-  right: auto !important; /* Forces X to the left side like Image 11 */
   padding: 0 !important;
-  width: auto !important;
-  height: auto !important;
 }
 
-/* Remove SVG circle background overlays inside the X icon */
+/* Remove SVG circle background/ring inside the X */
+.cart-drawer .drawer__close svg circle,
+.cart-drawer-component .drawer__close svg circle {
+  display: none !important;
+}
+
+/* Make the X lines white */
 .cart-drawer .drawer__close svg,
-.cart-drawer .drawer__close svg path {
+.cart-drawer .drawer__close svg path,
+.cart-drawer-component .drawer__close svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
-  background: transparent !important;
-}
-
-.cart-drawer .drawer__close circle {
-  display: none !important; /* Strips out any round circle border */
 }
