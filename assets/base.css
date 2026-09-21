@@ -1892,3 +1892,74 @@ variant-radios input[type="radio"]:focus + label,
   border-right: 1px solid #000000 !important;
   box-shadow: none !important;
 }
+
+/* ============================================================
+   COLESICE DARK MODE CART DRAWER & MINIMAL X BUTTON
+   ============================================================ */
+
+/* 1. FORCE DRAWER BACKGROUND TO BLACK & TEXT TO WHITE */
+.cart-drawer,
+.drawer__inner,
+#CartDrawer,
+.cart-drawer__inner {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Force headings and body text inside cart to white */
+.cart-drawer *,
+.drawer__inner *,
+.cart-drawer__empty-content,
+.cart-drawer .cart-item__name,
+.cart-drawer .price {
+  color: #ffffff !important;
+}
+
+/* 2. CONTINUE SHOPPING BUTTON (WHITE BOX / BLACK TEXT) */
+.cart-drawer .button,
+.cart-drawer .button--primary,
+.cart-drawer__empty-content .button {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 0px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  box-shadow: none !important;
+}
+
+.cart-drawer .button:hover,
+.cart-drawer__empty-content .button:hover {
+  background-color: #e5e5e5 !important;
+  color: #000000 !important;
+}
+
+/* 3. MATCHING MINIMAL CLOSE 'X' BUTTON (NO CIRCLE) */
+.cart-drawer .drawer__close,
+.cart-drawer button.drawer__close,
+.cart-drawer .close-button {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  top: 15px !important;
+  left: 15px !important;
+  right: auto !important; /* Forces X to the left side like Image 11 */
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Remove SVG circle background overlays inside the X icon */
+.cart-drawer .drawer__close svg,
+.cart-drawer .drawer__close svg path {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  background: transparent !important;
+}
+
+.cart-drawer .drawer__close circle {
+  display: none !important; /* Strips out any round circle border */
+}
