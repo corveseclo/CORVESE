@@ -1837,40 +1837,50 @@ main > .shopify-section:first-child .section:not(.disable-section-top-offset) {
   }
 }
 
-/* COLESICE EXACT SIZE BOXES */
+/* FORCE COLESICE STYLE VARIANT BUTTONS */
 
-/* Unselected state: Black background, thin grey border */
+/* 1. Reset base box layout */
 .product-form__input input[type="radio"] + label,
 variant-radios label,
 .variant-picker label,
 .product-option label,
 fieldset.product-form__input label {
-  border-radius: 0px !important;
+  background: #000000 !important;
   background-color: #000000 !important;
-  border: 1px solid #444444 !important;
+  border: 1px solid #333333 !important;
+  border-radius: 0px !important;
   color: #ffffff !important;
   font-weight: 700 !important;
   padding: 10px 16px !important;
-  min-width: 48px !important;
+  min-width: 44px !important;
   text-align: center !important;
   box-shadow: none !important;
   outline: none !important;
+  position: relative !important;
+  opacity: 1 !important;
 }
 
-/* Selected state: Pure black background + crisp white border */
+/* 2. Kill Horizon's default overlay/tint elements */
+.product-form__input input[type="radio"] + label::before,
+.product-form__input input[type="radio"] + label::after,
+variant-radios label::before,
+variant-radios label::after,
+.variant-picker label::before,
+.variant-picker label::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+}
+
+/* 3. Selected Box: Pure Black inside + Crisp White Border */
 .product-form__input input[type="radio"]:checked + label,
 variant-radios input[type="radio"]:checked + label,
 .variant-picker input[type="radio"]:checked + label,
 .product-option input[type="radio"]:checked + label,
 fieldset.product-form__input input[type="radio"]:checked + label {
-  background-color: #000000 !important; /* Forces black background when selected */
-  border: 2px solid #ffffff !important; /* Thick white outline */
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border: 2px solid #ffffff !important;
   color: #ffffff !important;
   box-shadow: none !important;
-}
-
-/* Hover state */
-.product-form__input input[type="radio"] + label:hover,
-variant-radios label:hover {
-  border-color: #888888 !important;
 }
