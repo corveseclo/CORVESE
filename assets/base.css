@@ -1837,15 +1837,13 @@ main > .shopify-section:first-child .section:not(.disable-section-top-offset) {
   }
 }
 
-/* FORCE COLESICE STYLE VARIANT BUTTONS */
+/* PERMANENT COLESICE VARIANT SELECTION */
 
-/* 1. Reset base box layout */
+/* Base Swatch Styling */
 .product-form__input input[type="radio"] + label,
 variant-radios label,
 .variant-picker label,
-.product-option label,
 fieldset.product-form__input label {
-  background: #000000 !important;
   background-color: #000000 !important;
   border: 1px solid #333333 !important;
   border-radius: 0px !important;
@@ -1856,31 +1854,25 @@ fieldset.product-form__input label {
   text-align: center !important;
   box-shadow: none !important;
   outline: none !important;
-  position: relative !important;
-  opacity: 1 !important;
+  cursor: pointer !important;
 }
 
-/* 2. Kill Horizon's default overlay/tint elements */
-.product-form__input input[type="radio"] + label::before,
-.product-form__input input[type="radio"] + label::after,
-variant-radios label::before,
-variant-radios label::after,
-.variant-picker label::before,
-.variant-picker label::after {
-  display: none !important;
-  content: none !important;
-  background: transparent !important;
-}
-
-/* 3. Selected Box: Pure Black inside + Crisp White Border */
+/* Selected State - Persists when clicking away to PayPal/Other elements */
 .product-form__input input[type="radio"]:checked + label,
 variant-radios input[type="radio"]:checked + label,
 .variant-picker input[type="radio"]:checked + label,
-.product-option input[type="radio"]:checked + label,
-fieldset.product-form__input input[type="radio"]:checked + label {
-  background: #000000 !important;
+fieldset.product-form__input input[type="radio"]:checked + label,
+.product-form__input label.is-selected,
+variant-radios label.is-selected {
   background-color: #000000 !important;
   border: 2px solid #ffffff !important;
   color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* Remove default browser focus rings that turn grey on click */
+.product-form__input input[type="radio"]:focus + label,
+variant-radios input[type="radio"]:focus + label {
+  outline: none !important;
   box-shadow: none !important;
 }
