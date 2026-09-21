@@ -141,10 +141,24 @@
             "text_f9CFLH",
             "email_signup_8DAYix"
           ]
+        },
+        "payment_icons_X7dV7f": {
+          "type": "payment-icons",
+          "name": "t:names.payment_icons",
+          "settings": {
+            "horizontal_alignment": "flex-end",
+            "gap": 10,
+            "padding-block-start": 100,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "group_H6VpwJ"
+        "group_H6VpwJ",
+        "payment_icons_X7dV7f"
       ],
       "name": "t:names.footer",
       "settings": {
@@ -161,7 +175,7 @@
         "social_links_7wcjrH": {
           "type": "social-links",
           "settings": {
-            "icon_color": "#FFFFFF",
+            "icon_color": "#ffffff",
             "facebook_url": "",
             "instagram_url": "https://www.instagram.com/",
             "youtube_url": "",
