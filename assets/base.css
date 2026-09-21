@@ -1837,7 +1837,7 @@ main > .shopify-section:first-child .section:not(.disable-section-top-offset) {
   }
 }
 
-/* PERMANENT COLESICE VARIANT SELECTION */
+/* FORCE PERMANENT COLESICE SIZE BOXES */
 
 /* Base Swatch Styling */
 .product-form__input input[type="radio"] + label,
@@ -1854,25 +1854,32 @@ fieldset.product-form__input label {
   text-align: center !important;
   box-shadow: none !important;
   outline: none !important;
-  cursor: pointer !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
-/* Selected State - Persists when clicking away to PayPal/Other elements */
+/* Kill blue/grey active tap highlight on iPad/mobile safari */
+.product-form__input input[type="radio"] + label *,
+variant-radios label * {
+  background: transparent !important;
+}
+
+/* Selected State - Locked White Border */
 .product-form__input input[type="radio"]:checked + label,
 variant-radios input[type="radio"]:checked + label,
 .variant-picker input[type="radio"]:checked + label,
-fieldset.product-form__input input[type="radio"]:checked + label,
-.product-form__input label.is-selected,
-variant-radios label.is-selected {
+fieldset.product-form__input input[type="radio"]:checked + label {
   background-color: #000000 !important;
   border: 2px solid #ffffff !important;
   color: #ffffff !important;
   box-shadow: none !important;
+  outline: none !important;
 }
 
-/* Remove default browser focus rings that turn grey on click */
+/* Force focus state to stay white when clicking away */
 .product-form__input input[type="radio"]:focus + label,
-variant-radios input[type="radio"]:focus + label {
+variant-radios input[type="radio"]:focus + label,
+.product-form__input input[type="radio"]:focus-visible + label {
   outline: none !important;
   box-shadow: none !important;
+  border-color: #ffffff !important;
 }
