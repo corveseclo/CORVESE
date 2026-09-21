@@ -1892,28 +1892,3 @@ variant-radios input[type="radio"]:focus + label,
   border-right: 1px solid #000000 !important;
   box-shadow: none !important;
 }
-
-/* FORCE PAYMENT ICONS INTO A SINGLE ROW */
-.footer__payment ul,
-.footer__payment-icons,
-ul.list-payment {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  justify-content: flex-end !important;
-  gap: 6px !important;
-}
-
-/* Ensure individual icons shrink to fit 1 line without wrapping */
-.footer__payment li,
-.list-payment__item {
-  flex-shrink: 1 !important;
-  max-width: 38px !important;
-}
-
-/* Align Payment Block to Bottom Right */
-.footer__column--info,
-.footer__content-bottom-wrapper {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: flex-end !important;
-}
