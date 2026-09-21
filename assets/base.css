@@ -1837,36 +1837,40 @@ main > .shopify-section:first-child .section:not(.disable-section-top-offset) {
   }
 }
 
-/* COLESICE STYLE VARIANT BUTTONS */
-/* Base box style: sharp corners, dark background, subtle thin border */
+/* COLESICE EXACT SIZE BOXES */
+
+/* Unselected state: Black background, thin grey border */
 .product-form__input input[type="radio"] + label,
 variant-radios label,
 .variant-picker label,
-.product-option label {
-  border-radius: 0px !important;            /* Removes rounded pill shape */
-  background-color: #000000 !important;     /* Pure black box background */
-  border: 1px solid #333333 !important;     /* Light grey thin border */
-  color: #ffffff !important;                /* Crisp white text */
-  font-weight: 700 !important;               /* Bold font */
-  padding: 10px 16px !important;            /* Box padding */
-  min-width: 44px !important;               /* Square box width */
+.product-option label,
+fieldset.product-form__input label {
+  border-radius: 0px !important;
+  background-color: #000000 !important;
+  border: 1px solid #444444 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 10px 16px !important;
+  min-width: 48px !important;
   text-align: center !important;
-  transition: border-color 0.15s ease !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-/* Selected / Active Box: Thick white outline */
+/* Selected state: Pure black background + crisp white border */
 .product-form__input input[type="radio"]:checked + label,
 variant-radios input[type="radio"]:checked + label,
 .variant-picker input[type="radio"]:checked + label,
-.product-option input[type="radio"]:checked + label {
-  border: 2px solid #ffffff !important;     /* Thick white active border */
-  background-color: #000000 !important;
+.product-option input[type="radio"]:checked + label,
+fieldset.product-form__input input[type="radio"]:checked + label {
+  background-color: #000000 !important; /* Forces black background when selected */
+  border: 2px solid #ffffff !important; /* Thick white outline */
   color: #ffffff !important;
+  box-shadow: none !important;
 }
 
 /* Hover state */
 .product-form__input input[type="radio"] + label:hover,
 variant-radios label:hover {
-  border-color: #666666 !important;
+  border-color: #888888 !important;
 }
-
