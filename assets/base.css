@@ -1836,3 +1836,37 @@ main > .shopify-section:first-child .section:not(.disable-section-top-offset) {
     margin-top: calc(var(--header-height) * var(--transparent-header-offset-boolean) * -1);
   }
 }
+
+/* COLESICE STYLE VARIANT BUTTONS */
+/* Base box style: sharp corners, dark background, subtle thin border */
+.product-form__input input[type="radio"] + label,
+variant-radios label,
+.variant-picker label,
+.product-option label {
+  border-radius: 0px !important;            /* Removes rounded pill shape */
+  background-color: #000000 !important;     /* Pure black box background */
+  border: 1px solid #333333 !important;     /* Light grey thin border */
+  color: #ffffff !important;                /* Crisp white text */
+  font-weight: 700 !important;               /* Bold font */
+  padding: 10px 16px !important;            /* Box padding */
+  min-width: 44px !important;               /* Square box width */
+  text-align: center !important;
+  transition: border-color 0.15s ease !important;
+}
+
+/* Selected / Active Box: Thick white outline */
+.product-form__input input[type="radio"]:checked + label,
+variant-radios input[type="radio"]:checked + label,
+.variant-picker input[type="radio"]:checked + label,
+.product-option input[type="radio"]:checked + label {
+  border: 2px solid #ffffff !important;     /* Thick white active border */
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Hover state */
+.product-form__input input[type="radio"] + label:hover,
+variant-radios label:hover {
+  border-color: #666666 !important;
+}
+
