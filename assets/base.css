@@ -1893,75 +1893,70 @@ variant-radios input[type="radio"]:focus + label,
   box-shadow: none !important;
 }
 
-/* HORIZON FOOTER NEWSLETTER - EXACT MATCH FOR IMAGE 14 */
-
-/* 1. INPUT BOX CONTAINER (BLACK, GREY OUTLINE, 0PX RADIUS) */
-.footer newsletter-form .field,
-.footer .field {
-  background-color: #000000 !important;
-  border: 1px solid #333333 !important;
-  border-radius: 0px !important;
-  max-width: 280px !important;
-  height: 42px !important;
-  position: relative !important;
-  margin: 0 !important;
+/* HORIZON FOOTER NEWSLETTER OVERRIDE */
+footer-section,
+.footer,
+.footer * {
+  --color-background: 0 0 0 !important;
+  --color-foreground: 255 255 255 !important;
+  --inputs-radius: 0px !important;
+  --inputs-border-width: 1px !important;
+  --inputs-border-opacity: 0.3 !important;
 }
 
-/* 2. INPUT TEXT & PLACEHOLDER */
+/* Force Input Field Box */
+.footer input[type="email"],
 .footer .field__input {
   background-color: #000000 !important;
   color: #ffffff !important;
-  border: none !important;
+  border: 1px solid #333333 !important;
   border-radius: 0px !important;
-  font-size: 12px !important;
-  padding-left: 12px !important;
-  height: 100% !important;
-  box-shadow: none !important;
-}
-
-.footer .field__input::placeholder,
-.footer .field__label {
-  color: #777777 !important;
-  font-size: 12px !important;
-}
-
-/* Hide default Horizon focus rings */
-.footer .field__input:focus,
-.footer .field:focus-within {
   outline: none !important;
   box-shadow: none !important;
-  border-color: #555555 !important;
+  height: 42px !important;
+  padding-left: 12px !important;
+  font-size: 13px !important;
 }
 
-/* 3. CIRCLE ARROW BUTTON */
-.footer .field__button,
-.footer button[name="commit"] {
-  background-color: #222222 !important; /* Dark grey circle */
+.footer input[type="email"]::placeholder,
+.footer .field__input::placeholder {
+  color: #888888 !important;
+  opacity: 1 !important;
+}
+
+/* Force Submit Button into Grey Circle */
+.footer button.field__button,
+.footer button[type="submit"] {
+  background-color: #262626 !important;
   border-radius: 50% !important;
-  width: 26px !important;
-  height: 26px !important;
-  min-width: 26px !important;
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  max-width: 28px !important;
   padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
   position: absolute !important;
   right: 8px !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
-  border: none !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   cursor: pointer !important;
 }
 
-/* Force White Arrow inside Circle */
-.footer .field__button svg,
-.footer button[name="commit"] svg {
+/* Force Inner White Arrow Icon */
+.footer button.field__button svg,
+.footer button[type="submit"] svg {
   width: 12px !important;
   height: 12px !important;
   fill: #ffffff !important;
   color: #ffffff !important;
 }
 
-.footer .field__button svg path {
+.footer button.field__button svg path,
+.footer button[type="submit"] svg path {
   fill: #ffffff !important;
+  stroke: #ffffff !important;
 }
