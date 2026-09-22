@@ -1893,3 +1893,83 @@ variant-radios input[type="radio"]:focus + label,
   box-shadow: none !important;
 }
 
+/* ============================================================
+   COLESICE FOOTER NEWSLETTER INPUT & ARROW BUTTON
+   ============================================================ */
+
+/* 1. CONTAINER & INPUT BOX (BLACK, SHARP EDGES, GREY BORDER) */
+.footer__newsletter .field,
+.newsletter-form__field-wrapper .field {
+  background-color: #000000 !important;
+  border: 1px solid #333333 !important;
+  border-radius: 0px !important;
+  max-width: 320px !important; /* Matches narrow width of upload 14 */
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+/* Input text field styling */
+.footer__newsletter .field__input,
+.newsletter-form__field-wrapper .field__input {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  font-size: 12px !important;
+  font-family: inherit !important;
+  padding-left: 14px !important;
+  height: 100% !important;
+}
+
+/* Placeholder font styling */
+.footer__newsletter .field__input::placeholder,
+.footer__newsletter .field__label {
+  color: #888888 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+/* Remove default focus outline rings */
+.footer__newsletter .field__input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 2. SUBMIT BUTTON WITH CIRCLE & ARROW */
+.footer__newsletter .newsletter-form__button,
+.footer__newsletter button.field__button {
+  background-color: #222222 !important; /* Grey circle background */
+  border-radius: 50% !important; /* Circle shape for the arrow icon */
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  padding: 0 !important;
+  margin-right: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  cursor: pointer !important;
+  position: absolute !important;
+  right: 4px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Force Arrow Icon Color to White & Set Size */
+.footer__newsletter .newsletter-form__button svg,
+.footer__newsletter button.field__button svg {
+  width: 12px !important;
+  height: 12px !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+.footer__newsletter .newsletter-form__button svg path,
+.footer__newsletter button.field__button svg path {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
