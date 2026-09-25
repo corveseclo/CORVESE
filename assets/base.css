@@ -1961,48 +1961,72 @@ footer-section,
   stroke: #ffffff !important;
 }
 
-/* 1. TURN BOTTOM WHITE STRIPE/BORDER PITCH BLACK */
+/* ============================================================
+   COLESICE HORIZON CART DRAWER - PERFECT MATCH FOR IMAGE 13
+   ============================================================ */
+
+/* 1. FORCE DRAWER & BORDERS TO PURE PITCH BLACK */
 cart-drawer,
 cart-drawer-component,
-.cart-drawer,
+.drawer,
 .drawer__inner,
-.cart-drawer__footer,
-.cart-drawer__footer * {
-  background-color: #000000 !important;
+.cart-drawer__inner,
+#CartDrawer {
   background: #000000 !important;
-  border-color: #000000 !important;
-  border-top: none !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-left: 1px solid #000000 !important; /* Turn white outer border pitch black */
   box-shadow: none !important;
+  --color-background: 0 0 0 !important;
+  --gradient-background: #000000 !important;
+  --color-foreground: 255 255 255 !important;
 }
 
-/* 2. MAKE "CONTINUE SHOPPING" TEXT BOLDER & DARKER */
+/* 2. FORCE BOLDER TEXT INSIDE WHITE BUTTON */
 cart-drawer .button,
 cart-drawer-component .button,
+.drawer__inner .button,
 .cart-drawer__empty-content .button {
   background-color: #ffffff !important;
+  background: #ffffff !important;
   color: #000000 !important;
-  font-weight: 800 !important; /* Extra bold text */
-  font-family: inherit !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 0px !important;
+  font-weight: 800 !important; /* Bolder text */
   letter-spacing: 0.5px !important;
+  text-transform: capitalize !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
 }
 
 cart-drawer .button *,
-cart-drawer-component .button * {
+cart-drawer-component .button *,
+.drawer__inner .button *,
+.cart-drawer__empty-content .button * {
   color: #000000 !important;
-  font-weight: 800 !important;
+  font-weight: 800 !important; /* Bolder text */
 }
 
-/* 3. THICKEN THE 'X' CLOSE ICON */
-.cart-drawer .drawer__close svg path,
-.cart-drawer-component .drawer__close svg path,
-.cart-drawer .drawer__close svg line,
-.cart-drawer-component .drawer__close svg line {
+/* 3. THICKER 'X' CLOSE BUTTON */
+cart-drawer .drawer__close,
+cart-drawer-component .drawer__close,
+.cart-drawer button.drawer__close {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+cart-drawer .drawer__close circle,
+cart-drawer-component .drawer__close circle {
+  display: none !important; /* Strips circle wrapper */
+}
+
+cart-drawer .drawer__close svg path,
+cart-drawer-component .drawer__close svg path,
+cart-drawer .drawer__close svg line,
+cart-drawer-component .drawer__close svg line {
   stroke: #ffffff !important;
   fill: #ffffff !important;
-  stroke-width: 3.5px !important; /* Thickens X lines */
-}
-
-.cart-drawer .drawer__close,
-.cart-drawer-component .drawer__close {
-  transform: scale(1.2) !important; /* Slightly scales up the X icon size */
+  stroke-width: 3.5px !important; /* Thicker X icon */
 }
