@@ -1961,51 +1961,37 @@ footer-section,
   stroke: #ffffff !important;
 }
 
-/* FORCED PURE BLACK & WHITE FOR HORIZON CART DRAWER */
+/* 1. MAKE TOP/INNER STRIPE PITCH BLACK */
 cart-drawer,
 cart-drawer-component,
-.drawer,
-.drawer__inner,
-.cart-drawer__inner,
-#CartDrawer {
-  background: #000000 !important;
+.cart-drawer__header,
+.drawer__header,
+.drawer__inner {
   background-color: #000000 !important;
-  color: #ffffff !important;
-  --color-background: 0 0 0 !important;
-  --gradient-background: #000000 !important;
-  --color-foreground: 255 255 255 !important;
+  border-color: #000000 !important;
 }
 
-/* Force all text elements inside to white */
-cart-drawer *,
-cart-drawer-component *,
-.drawer__inner *,
-.cart-drawer * {
-  color: #ffffff !important;
-}
-
-/* Force "Continue Shopping" button: Solid white box with black text */
+/* 2. MAKE 'CONTINUE SHOPPING' TEXT BOLDER & PURE BLACK */
 cart-drawer .button,
 cart-drawer-component .button,
-.drawer__inner .button,
 .cart-drawer__empty-content .button {
-  background-color: #ffffff !important;
-  background: #ffffff !important;
   color: #000000 !important;
-  border: 1px solid #ffffff !important;
-  border-radius: 0px !important;
-  box-shadow: none !important;
-  opacity: 1 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
 }
 
 cart-drawer .button *,
-cart-drawer-component .button *,
-.drawer__inner .button * {
+cart-drawer-component .button * {
   color: #000000 !important;
+  font-weight: 800 !important;
 }
 
-/* Remove grey overlay behind the drawer */
-.drawer__overlay,
-cart-drawer-component .overlay {
-  background-color: rgba(0, 0, 0, 0.7) !important;
+/* 3. MAKE THE 'X' CLOSE ICON THICKER */
+cart-drawer .drawer__close svg path,
+cart-drawer-component .drawer__close svg path,
+cart-drawer .drawer__close svg line,
+cart-drawer-component .drawer__close svg line {
+  stroke: #ffffff !important;
+  stroke-width: 3px !important;
+  fill: #ffffff !important;
 }
