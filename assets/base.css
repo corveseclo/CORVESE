@@ -1961,51 +1961,48 @@ footer-section,
   stroke: #ffffff !important;
 }
 
-/* FORCED PURE BLACK & WHITE FOR HORIZON CART DRAWER */
+/* 1. TURN BOTTOM WHITE STRIPE/BORDER PITCH BLACK */
 cart-drawer,
 cart-drawer-component,
-.drawer,
+.cart-drawer,
 .drawer__inner,
-.cart-drawer__inner,
-#CartDrawer {
-  background: #000000 !important;
+.cart-drawer__footer,
+.cart-drawer__footer * {
   background-color: #000000 !important;
-  color: #ffffff !important;
-  --color-background: 0 0 0 !important;
-  --gradient-background: #000000 !important;
-  --color-foreground: 255 255 255 !important;
+  background: #000000 !important;
+  border-color: #000000 !important;
+  border-top: none !important;
+  box-shadow: none !important;
 }
 
-/* Force all text elements inside to white */
-cart-drawer *,
-cart-drawer-component *,
-.drawer__inner *,
-.cart-drawer * {
-  color: #ffffff !important;
-}
-
-/* Force "Continue Shopping" button: Solid white box with black text */
+/* 2. MAKE "CONTINUE SHOPPING" TEXT BOLDER & DARKER */
 cart-drawer .button,
 cart-drawer-component .button,
-.drawer__inner .button,
 .cart-drawer__empty-content .button {
   background-color: #ffffff !important;
-  background: #ffffff !important;
   color: #000000 !important;
-  border: 1px solid #ffffff !important;
-  border-radius: 0px !important;
-  box-shadow: none !important;
-  opacity: 1 !important;
+  font-weight: 800 !important; /* Extra bold text */
+  font-family: inherit !important;
+  letter-spacing: 0.5px !important;
 }
 
 cart-drawer .button *,
-cart-drawer-component .button *,
-.drawer__inner .button * {
+cart-drawer-component .button * {
   color: #000000 !important;
+  font-weight: 800 !important;
 }
 
-/* Remove grey overlay behind the drawer */
-.drawer__overlay,
-cart-drawer-component .overlay {
-  background-color: rgba(0, 0, 0, 0.7) !important;
+/* 3. THICKEN THE 'X' CLOSE ICON */
+.cart-drawer .drawer__close svg path,
+.cart-drawer-component .drawer__close svg path,
+.cart-drawer .drawer__close svg line,
+.cart-drawer-component .drawer__close svg line {
+  stroke: #ffffff !important;
+  fill: #ffffff !important;
+  stroke-width: 3.5px !important; /* Thickens X lines */
+}
+
+.cart-drawer .drawer__close,
+.cart-drawer-component .drawer__close {
+  transform: scale(1.2) !important; /* Slightly scales up the X icon size */
 }
