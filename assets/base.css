@@ -1960,3 +1960,97 @@ footer-section,
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
+
+/* ============================================================
+   CORVESE EXACT MATCH - CART DRAWER OVERRIDE
+   ============================================================ */
+
+/* 1. BLACK BACKGROUND & WHITE TEXT */
+cart-drawer-component,
+.cart-drawer,
+.cart-drawer__inner,
+.drawer__inner,
+#CartDrawer {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Force all headers and copy inside cart to pure white */
+.cart-drawer *,
+.drawer__inner *,
+.cart-drawer__empty-content,
+.cart-drawer__heading,
+.cart-drawer__title,
+.cart-drawer p {
+  color: #ffffff !important;
+}
+
+/* 2. WHITE BUTTON WITH CENTERED BLACK TEXT */
+.cart-drawer .button,
+.cart-drawer button,
+.cart-drawer a.button,
+.cart-drawer__empty-content .button,
+.cart-drawer__summary .button {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 0px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  padding: 14px 20px !important;
+}
+
+.cart-drawer .button:hover,
+.cart-drawer__empty-content .button:hover {
+  background-color: #e5e5e5 !important;
+  color: #000000 !important;
+}
+
+/* 3. EXACT CORVESE 'X' ICON (REMOVE CIRCLE ENTIRELY) */
+.cart-drawer .drawer__close,
+.cart-drawer button.drawer__close,
+.cart-drawer-component .drawer__close,
+.cart-drawer-component button[aria-label*="Close"] {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  padding: 0 !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+}
+
+/* REMOVE CIRCLE SVG WRAPPER */
+.cart-drawer .drawer__close circle,
+.cart-drawer-component .drawer__close circle,
+.cart-drawer .drawer__close rect,
+.cart-drawer-component .drawer__close rect {
+  display: none !important;
+  stroke: none !important;
+  fill: none !important;
+}
+
+/* MAKE X LINES WHITE & SHARP */
+.cart-drawer .drawer__close svg,
+.cart-drawer-component .drawer__close svg {
+  background: transparent !important;
+}
+
+.cart-drawer .drawer__close svg path,
+.cart-drawer-component .drawer__close svg path,
+.cart-drawer .drawer__close svg line,
+.cart-drawer-component .drawer__close svg line {
+  stroke: #ffffff !important;
+  fill: #ffffff !important;
+  stroke-width: 2px !important;
+}
+
